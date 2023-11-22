@@ -327,10 +327,10 @@ export const Popup = forwardRef<PopupActions, PopupProps>(
               : ''
           }`}
           style={{
+            pointerEvents:
+                (closeOnDocumentClick && nested) || isModal ? 'auto' : 'none',
             ...ovStyle,
             ...overlayStyle,
-            pointerEvents:
-              (closeOnDocumentClick && nested) || isModal ? 'auto' : 'none',
           }}
           onClick={closeOnDocumentClick && nested ? closePopup : undefined}
           tabIndex={-1}
